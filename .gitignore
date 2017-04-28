@@ -20,4 +20,4 @@ useradminservice_override.properties
 *.iws
 /.idea
 
-IotFrontend.yml
+/IotFrontend.yml
