@@ -1,0 +1,18 @@
+server:
+  rootPath: /IotFrontend
+  applicationConnectors:
+    - type: http
+      port: 0
+  adminConnectors:
+    - type: http
+      port: 0
+
+logging:
+  level: INFO
+  loggers:
+    no.cantara.iot.frontend: TRACE
+  appenders:
+    - type: console
+
+swagger:
+  resourcePackage: no.cantara.iot.frontend
