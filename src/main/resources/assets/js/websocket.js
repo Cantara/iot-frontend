@@ -1,5 +1,5 @@
 //var wsUri = "ws://localhost:8086/application/ws";// "ws://" + document.location.host + "/application/ws";
-var wsUri = "wss://iotlab.cantara.no/devices/ws";
+//var wsUri = "wss://iotlab.cantara.no/devices/ws";
 var websocket = new WebSocket(wsUri);
 
 websocket.onmessage = function(evt) { onMessage(evt) };
@@ -122,14 +122,14 @@ function updateTemperature(temperature) {
 
 
 function onMessage(evt) {
-    //console.log("received over websockets: " + evt.data);
+    console.log("received over websockets: " + evt.data);
     try {
 
-        var data = JSON.parse(evt.data);
-        var payload = data.payload;
+        // var data = JSON.parse(evt.data);
+        // var payload = data.payload;
 
         //addToGraph(payload);
-        updatePresentation(payload);
+        // updatePresentation(payload);
         writeToScreen(evt.data);
 
     } catch (e){
@@ -146,6 +146,7 @@ function onOpen() {
     writeToScreen("<b>Connected</b> to " + wsUri);
     websocket.send("subscribe device baardlTI");
     websocket.send("subscribe device 4d6e848e-d99e-40c7-9c61-1744c525bfd8-de44fce1-ecb3-483d-ac22-113a3269bfc1");
+    websocket.send("subscribe device 8225ae39-b0db-4377-bc8b-83d0c8cb1534");
     interval= setInterval(wsPing,1000);
 }
 function onClose(evt) {

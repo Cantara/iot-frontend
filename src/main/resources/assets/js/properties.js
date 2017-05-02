@@ -1,0 +1,1 @@
+var wsUri = "wss://iotlab.cantara.no/devices/ws";
