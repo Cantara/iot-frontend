@@ -130,7 +130,7 @@ function onMessage(evt) {
 
         //addToGraph(payload);
         // updatePresentation(payload);
-        writeToScreen(evt.data);
+        writeText(evt.data);
 
     } catch (e){
         console.log(e);
@@ -175,8 +175,18 @@ function addToGraph(payload) {
 function writeToScreen(message) {
     if (output==null)
     {output = document.getElementById("output");}
-    //output.innerHTML += message + "<br>";
+
     output.innerHTML = message + "<br>";
+}
+
+function writeText(message) {
+    if (output==null)
+    {output = document.getElementById("output");}
+
+    var content = document.createTextNode(message);
+    output.appendChild(content);
+    var br = document.createElement("br");
+    output.appendChild(br);
 }
 
 function sendText(json) {
