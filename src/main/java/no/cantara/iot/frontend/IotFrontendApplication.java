@@ -34,7 +34,12 @@ public class IotFrontendApplication extends Application<IotFrontendDropwizardCon
     @Override
     public void initialize(Bootstrap<IotFrontendDropwizardConfiguration> bootstrap) {
         bootstrap.getObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        bootstrap.addBundle(new AssetsBundle("/assets/subscription.html","/subscription","subscription.html", "subscription"));
         bootstrap.addBundle(new AssetsBundle("/assets/index.html","/","index.html"));
+        bootstrap.addBundle(new AssetsBundle("/assets/css", "/css", null, "css"));
+        bootstrap.addBundle(new AssetsBundle("/assets/js", "/js", null, "js"));
+        bootstrap.addBundle(new AssetsBundle("/assets/fonts", "/fonts", null, "fonts"));
+        bootstrap.addBundle(new AssetsBundle("/assets/images", "/images", null, "images"));
         bootstrap.addBundle(new SwaggerBundle<IotFrontendDropwizardConfiguration>() {
             @Override
             protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(IotFrontendDropwizardConfiguration configuration) {

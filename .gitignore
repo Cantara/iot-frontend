@@ -21,3 +21,4 @@ useradminservice_override.properties
 /.idea
 
 /IotFrontend.yml
+*_override.properties
