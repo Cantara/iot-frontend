@@ -6,23 +6,33 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
     <title>IoT Device Data Demo</title>
-    <link rel="stylesheet" href="/css/styleguide.css">
-    <link rel="stylesheet" href="/css/prettyprint.css">
-    <link rel="stylesheet" href="/css/albatross.css">
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="/frontend/css/styleguide.css">
+    <link rel="stylesheet" href="/frontend/css/prettyprint.css">
+    <link rel="stylesheet" href="/frontend/css/albatross.css">
+    <script type="text/javascript" src="/frontend/js/lib/jquery-1.9.1.js"></script>
 </head>
 
 <body>
-<center><h1>AWS IoT</h1></center>
-<center><img src="/images/image1.jpg" id="imageElement" height="800"><br/></center>
-
-<h3>Console Log</h3>
-<div id="output"></div>
-<script src="/js/properties_override.js"/>
-<script src="/js/properties.js"/>
-<script src="/js/presenter.js"/>
-<script src="/js/devicedata.js"></script>
-<script src="/js/websocket.js"></script>
+<div align="center">
+    <h1>AWS IoT</h1>
+</div>
+<hr/>
+<table>
+    <tr>
+        <td>
+            <img src="/frontend/images/image1.jpg" id="imageElement" height="400"><br/>
+        </td>
+        <td>
+            <h3>Console Log</h3>
+            <div id="output"></div>
+        </td>
+    </tr>
+</table>
+<script src="/frontend/js/properties_override.js"/>
+<script src="/frontend/js/properties.js"/>
+<script src="/frontend/js/presenter.js"/>
+<script src="/frontend/js/devicedata.js"></script>
+<script src="/frontend/js/websocket.js"></script>
 
 
 

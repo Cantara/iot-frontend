@@ -1,10 +1,13 @@
 # IotFrontend
-A runnable microservice devops-ready java application built on DropWizard, Spring IoC, and more
+Access IoT Devices api. Subscribe to updates from devices.
+
+## Install
 
 ```
 mvn install
 ```
 
+## Run
 ```
 java -jar target/iot-frontend-0.1-SNAPSHOT.jar
 or 
@@ -13,16 +16,17 @@ or
 run.bat
 ```
 
+## Enter webclient
 
-```
-https://localhost:8080/IotFrontend
-```
+* https://localhost:8080/frontend
 
-*Healthcheck*
+
+## Healthcheck
 ```
 http://localhost:8081/IotFrontend/healthcheck
 ```
 
+## Hystrix
 
 We recomend to enhance your remote http calls within Hystrix Commands. 
 It is quite simple, have a look at the ProxyExampleResource.
@@ -38,4 +42,11 @@ Use a Hystrix dashboard to view these data. See https://github.com/Netflix/Hystr
  * https://github.com/Netflix/Hystrix/wiki/Getting-Started
  * https://github.com/zapodot/hystrix-dropwizard-bundle
  
+ ## Deployment
+ 
+ ### Static content
+ http://localhost:8080/frontend/
+ 
+ ### Dynamic content and api
+  http://localhost:8080/IotFrontend/
 
