@@ -16,10 +16,10 @@
     <packaging>jar</packaging>
 
     <scm>
-        <developerConnection>TODO Your Github URL</developerConnection>
-        <connection>TODO Your Github URL</connection>
-        <url>TODO https://github.com/Cantara/dropwizard-microservices-archetype</url>
-  </scm>
+        <developerConnection>scm:git:git@github.com:Cantara/iot-frontend.git</developerConnection>
+        <connection>scm:git:git@github.com:Cantara/iot-frontend.git</connection>
+        <url>https://github.com/Cantara/iot-frontend</url>
+    </scm>
 
     <properties>
         <slf4j.version>1.7.12</slf4j.version>
