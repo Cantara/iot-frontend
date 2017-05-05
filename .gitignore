@@ -23,4 +23,4 @@ useradminservice_override.properties
 /IotFrontend.yml
 # Properties
 properties_override.js
-*_override.properties
+/IotFrontend_override.properties
