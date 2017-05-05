@@ -19,19 +19,6 @@ function closeWS() {
     websocket.close();
 }
 
-function updateTemperature(temperature) {
-    var x = (new Date()).getTime(); // current time
-    var series = chart.series[0];
-    if ($.isNumeric(temperature)) {
-        var temp = parseFloat(temperature);
-        series.addPoint([x, temp], true, true);
-    } else
-    {
-        console.log("Temperature is not a number: " + temperature);
-    }
-}
-
-
 function onMessage(evt) {
     console.log("received over websockets: " + evt.data);
     try {
@@ -56,8 +43,6 @@ function onError(evt) {
 function onOpen() {
     writeToScreen("<b>Connected</b> to " + wsUri);
     websocket.send("subscribe device baardlTI");
-    websocket.send("subscribe device 4d6e848e-d99e-40c7-9c61-1744c525bfd8-de44fce1-ecb3-483d-ac22-113a3269bfc1");
-    websocket.send("subscribe device 8225ae39-b0db-4377-bc8b-83d0c8cb1534");
     interval= setInterval(wsPing,1000);
 }
 function onClose(evt) {
@@ -68,19 +53,11 @@ function wsPing(){
     websocket.send("ping");
 }
 
-
-// For testing purposes
-var output = document.getElementById("output");
-var grahdata = document.getElementById("grap");
-
-function addToGraph(payload) {
-    if (grahdata==null)
-    {grahdata = document.getElementById("graph");}
-    //output.innerHTML += message + "<br>";
-    var graphText = "Temperature: <b>" + payload.temperature + "</b>";
-    grahdata.innerHTML = graphText + "<br>";
-    updateTemperature(payload.temperature);
+function subscribeSensorId(sensorId) {
+    websocket.send("subscibe device " + sensorId);
 }
+
+var output = document.getElementById("output");
 
 function writeToScreen(message) {
     if (output==null)
