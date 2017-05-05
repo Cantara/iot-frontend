@@ -1,2 +1,1 @@
-#iot_ws_url=wss://api.dev.iot.awsm.works/application/ws
 iot_ws_url=ws://iotlab.cantara.no/sensor-proxy-server/ws/

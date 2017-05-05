@@ -1,112 +1,18 @@
 //var wsUri = "ws://localhost:8086/application/ws";// "ws://" + document.location.host + "/application/ws";
 //var wsUri = "wss://iotlab.cantara.no/devices/ws";
-var websocket = new WebSocket(wsUri);
-
-websocket.onmessage = function(evt) { onMessage(evt) };
-websocket.onerror = function(evt) { onError(evt) };
-websocket.onopen = function(evt) { onOpen(evt) };
-websocket.onclose = function(evt) {onClose(evt)};
+var websocket = [];
 
 var interval;
-/*
-var optionsbli =
-{
-    chart: {
 
-    },
+function openWS(wsUri) {
+    websocket = new WebSocket(wsUri);
 
-    rangeSelector: {
-        buttons: [{
-            count: 1,
-            type: 'minute',
-            text: '1M'
-        }, {
-            count: 5,
-            type: 'minute',
-            text: '5M'
-        }, {
-            type: 'all',
-            text: 'All'
-        }],
-            inputEnabled: false,
-            selected: 0
-    },
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) {onClose(evt)};
 
-    title: {
-        text: 'Live random data'
-    },
-
-    exporting: {
-        enabled: false
-    },
-
-    series: [{
-        name: 'Random data',
-        data: [new Date().getTime(), 15]
-    }]
-};
-*/
-/*
-var chart;
-
-$(function () {
-
-    Highcharts.setOptions({
-        global: {
-            useUTC: false
-        }
-    });
-
-    // Create the chart
-    chart = new Highcharts.StockChart({
-        chart: {
-            renderTo: 'container'
-        },
-        rangeSelector: {
-            buttons: [{
-                count: 1,
-                type: 'minute',
-                text: '1M'
-            }, {
-                count: 5,
-                type: 'minute',
-                text: '5M'
-            }, {
-                type: 'all',
-                text: 'All'
-            }],
-            inputEnabled: false,
-            selected: 0
-        },
-
-        title: {
-            text: 'Live random data'
-        },
-
-        exporting: {
-            enabled: false
-        },
-        series: [{
-            data: (function () {
-                // generate an array of random data
-                var data = [],
-                    time = (new Date()).getTime(),
-                    i;
-
-                for (i = -999; i <= 0; i += 1) {
-                    data.push([
-                        time + i * 1000,
-                        1
-                    ]);
-                }
-                return data;
-            }())
-        }]
-    });
-
-});
-*/
-
+}
 
 function updateTemperature(temperature) {
     var x = (new Date()).getTime(); // current time
