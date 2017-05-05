@@ -3,6 +3,7 @@
 var websocket = [];
 
 var interval;
+var isWsOpen = false;
 
 function openWS(wsUri) {
     websocket = new WebSocket(wsUri);
@@ -44,8 +45,10 @@ function onOpen() {
     writeToScreen("<b>Connected</b> to " + wsUri);
     websocket.send("subscribe device baardlTI");
     interval= setInterval(wsPing,1000);
+    isWsOpen = true;
 }
 function onClose(evt) {
+    isWsOpen = false;
     writeText("Disconnected from " + wsUri);
 }
 
@@ -54,7 +57,11 @@ function wsPing(){
 }
 
 function subscribeSensorId(sensorId) {
-    websocket.send("subscibe device " + sensorId);
+    if (isWsOpen) {
+        websocket.send("subscibe device " + sensorId);
+    } else {
+        writeText("ERROR: You must connect first.");
+    }
 }
 
 var output = document.getElementById("output");
