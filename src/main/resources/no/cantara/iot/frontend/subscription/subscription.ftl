@@ -22,7 +22,7 @@
         <td>
             <img src="/frontend/images/image1.jpg" id="imageElement" height="400"><br/>
         </td>
-        <td><input id="open" type="button" value="Connect" onclick="openWS('${wsUrl}');" />
+        <td><input id="open" type="button" value="Connect" onclick="openWS('${wsUrl}');" /> <input id="close" type="button" value="Disconnect" onclick="closeWS('${wsUrl}');" />
 
             <h3>Console Log</h3>
             <div id="output"></div>

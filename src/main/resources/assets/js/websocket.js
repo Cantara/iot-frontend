@@ -14,6 +14,11 @@ function openWS(wsUri) {
 
 }
 
+function closeWS() {
+    clearInterval(interval);
+    websocket.close();
+}
+
 function updateTemperature(temperature) {
     var x = (new Date()).getTime(); // current time
     var series = chart.series[0];
@@ -56,8 +61,7 @@ function onOpen() {
     interval= setInterval(wsPing,1000);
 }
 function onClose(evt) {
-    writeToScreen("<b>Disconnected</b> from " + wsUri);
-    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+    writeText("Disconnected from " + wsUri);
 }
 
 function wsPing(){
