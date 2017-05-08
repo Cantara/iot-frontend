@@ -58,7 +58,7 @@ function wsPing(){
 
 function subscribeSensorId(sensorId) {
     if (isWsOpen) {
-        websocket.send("subscibe device " + sensorId);
+        websocket.send("subscribe device " + sensorId);
     } else {
         writeText("ERROR: You must connect first.");
     }
