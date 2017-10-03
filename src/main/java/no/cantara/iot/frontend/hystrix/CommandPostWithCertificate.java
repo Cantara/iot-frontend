@@ -58,13 +58,11 @@ public class CommandPostWithCertificate extends BaseHttpPostHystrixCommand<X509C
         String authStringEnc = new String(authEncBytes);
         return request.header("SOAPAction", "http://register.nhn.no/CommunicationParty/ICommunicationPartyService/GetCertificateDetailsForEncryption").authorization("Basic " + authStringEnc).contentType("text/xml").send(getSOAPEnvelope(herID).toString());
     }
-    // Authorization:Basic cGFzaWVudHNreTpRNlpHUnMybVhmRWFmWA==
 
     @Override
     protected String getTargetPath() {
         return "";
     }
-
 
     @Override
     protected X509Certificate dealWithResponse(String response) {
