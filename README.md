@@ -1,8 +1,6 @@
 # IotFrontend
 
-![Build Status](https://jenkins.capraconsulting.no/buildStatus/icon?job=iot-frontend) - [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)  
-
-[![Known Vulnerabilities](https://snyk.io/test/github/Cantara/iot-frontend/badge.svg)](https://snyk.io/test/github/Cantara/iot-frontend)
+![Build Status](https://jenkins.capraconsulting.no/buildStatus/icon?job=iot-frontend) - [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) - [![Known Vulnerabilities](https://snyk.io/test/github/Cantara/iot-frontend/badge.svg)](https://snyk.io/test/github/Cantara/iot-frontend)
 
 
 Access IoT Devices api. Subscribe to updates from devices.
